@@ -1,0 +1,33 @@
+
+
+alias gss='git status -s'
+alias gd='git diff'
+alias gcb='git checkout -b'
+alias gre='git log -p -1'
+alias glc='git commit --date "$(last_night)"'
+alias mp='git checkout master && git pull'
+alias map='git checkout main && git pull'
+alias dp='git checkout develop && git pull'
+alias less='less -R'
+alias jq='jq -C | less'
+alias f='find . -type d \( -name node_modules -o -name .git \) -prune -false -o'
+
+
+
+alias gp='git'
+unalias gp
+function gp {
+  git push origin $(git rev-parse --abbrev-ref HEAD)
+}
+
+alias gpl='git'
+unalias gpl
+function gpl {
+  git pull origin $(git rev-parse --abbrev-ref HEAD)
+}
+
+alias gpf='git'
+unalias gpf
+function gpf {
+  git push -f origin $(git rev-parse --abbrev-ref HEAD)
+}
